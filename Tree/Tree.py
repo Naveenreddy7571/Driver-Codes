@@ -44,38 +44,7 @@ def buildtree(inputString):
 
 
 
-def inorder(root):
-    if(root==None):
-        return None
-    
-    inorder(root.left)
-    print(root.data,end=" ")
-    inorder(root.right)
-
-
-def verticalorder(root):
-        if(root==None):
-            return []
-            
-        queue=deque()
-        map=defaultdict(list)
-        queue.append([root,0])
-        while(queue):
-            node,level = queue.popleft()
-            map[level].append(node.data)
-            if(node.left):
-                queue.append([node.left,level-1])
-            if(node.right):
-                queue.append([node.right,level+1])
-                
-        ans=[]
-        
-        mapkeys=list(map.keys())
-        mapkeys.sort()
-        for key in mapkeys:
-            for node in map[key]:
-                ans.append(node)
-        return ans
+# Code starts here
     
 
 
